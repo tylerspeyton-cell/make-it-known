@@ -454,6 +454,43 @@
       background: var(--accent-dark);
     }
 
+    /* CONTACT BUTTONS */
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .contact-btn-large {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 1.1rem 2rem;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .contact-btn-large:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .contact-btn-email {
+      background: transparent;
+      border: 2px solid var(--white);
+    }
+
+    .contact-btn-email:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
     /* FOOTER */
     footer {
       background: #111;
@@ -623,38 +660,10 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2 class="section-title">Let's Get Started</h2>
-      <p class="section-sub">Ready to grow your business online? Reach out today.</p>
-      <div class="contact-wrapper">
-
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>Have questions or ready to get your website built? Call, text, or send a message — I'll get back to you fast.</p>
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <a href="tel:+2542298753">254-229-8753</a>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <a href="mailto:tyler.s.peyton@gmail.com">tyler.s.peyton@gmail.com</a>
-          </div>
-        </div>
-
-        <form action="mailto:tyler.s.peyton@gmail.com" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="text" name="business" placeholder="Your Business Name" />
-          <input type="tel" name="phone" placeholder="Your Phone Number" />
-          <input type="email" name="email" placeholder="Your Email Address" />
-          <select name="package">
-            <option value="" disabled selected>Which package are you interested in?</option>
-            <option value="Basic – $400">Basic – $400</option>
-            <option value="Standard – $750">Standard – $750 (Most Popular)</option>
-            <option value="Premium – $900">Premium – $900</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-          <textarea name="message" placeholder="Tell me a little about your business..."></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-
+      <p class="section-sub">Ready to grow your business online? Reach out today — I'll get back to you fast.</p>
+      <div class="contact-buttons">
+        <a href="tel:+2542298753" class="contact-btn-large">📞 Call / Text 254-229-8753</a>
+        <a href="mailto:tyler.s.peyton@gmail.com" class="contact-btn-large contact-btn-email">✉️ tyler.s.peyton@gmail.com</a>
       </div>
     </div>
   </section>
