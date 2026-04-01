@@ -582,6 +582,124 @@
 
     form button:hover { background: var(--accent-dark); }
 
+    /* CUSTOM BUILD */
+    .custom-build {
+      background: var(--white);
+    }
+
+    .custom-build-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      .custom-build-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .custom-build-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .custom-build-info p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      font-size: 0.97rem;
+    }
+
+    .custom-build-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .custom-build-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .custom-build-list li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .custom-form-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .custom-form-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .custom-form-box input,
+    .custom-form-box select,
+    .custom-form-box textarea {
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      color: #222;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    .custom-form-box input::placeholder,
+    .custom-form-box textarea::placeholder {
+      color: #aaa;
+    }
+
+    .custom-form-box select option {
+      background: var(--white);
+      color: #222;
+    }
+
+    .custom-form-box input:focus,
+    .custom-form-box select:focus,
+    .custom-form-box textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .custom-form-box textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .custom-form-box button {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+
+    .custom-form-box button:hover {
+      background: var(--accent-dark);
+    }
+
     /* FOOTER */
     footer {
       background: #111;
@@ -620,6 +738,7 @@
       <a href="#how">How It Works</a>
       <a href="#why">Why Us</a>
       <a href="#pricing">Pricing</a>
+      <a href="#custom">Custom Build</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -806,6 +925,57 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- CUSTOM BUILD REQUEST -->
+  <section class="custom-build" id="custom">
+    <div class="container">
+      <h2 class="section-title">Request a Custom Build</h2>
+      <p class="section-sub">Need something specific? Describe what you want and we'll make it happen.</p>
+      <div class="custom-build-wrapper">
+
+        <div class="custom-build-info">
+          <h3>What We Can Build</h3>
+          <p>Don't see exactly what you need in our standard packages? We build custom solutions tailored to your business — no request is too specific.</p>
+          <ul class="custom-build-list">
+            <li>Online booking or scheduling systems</li>
+            <li>Product galleries or e-commerce integrations</li>
+            <li>Custom contact or quote request forms</li>
+            <li>Menu or service catalog pages</li>
+            <li>Payment processing &amp; checkout flows</li>
+            <li>Third-party tool integrations (CRM, email, etc.)</li>
+            <li>Anything else you have in mind</li>
+          </ul>
+        </div>
+
+        <div class="custom-form-box">
+          <form action="https://formspree.io/f/xojpqdbe" method="POST">
+            <input type="hidden" name="_subject" value="Custom Build Request" />
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email Address" required />
+            <input type="tel" name="phone" placeholder="Your Phone Number (optional)" />
+            <select name="build_type" required>
+              <option value="" disabled selected>What type of build is this?</option>
+              <option value="Website Integration">Website Integration</option>
+              <option value="Custom Feature or Tool">Custom Feature or Tool</option>
+              <option value="Full Custom Website">Full Custom Website</option>
+              <option value="Other">Other / Not Sure Yet</option>
+            </select>
+            <select name="budget">
+              <option value="" disabled selected>Approximate budget (optional)</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500 – $1,000">$500 – $1,000</option>
+              <option value="$1,000 – $2,500">$1,000 – $2,500</option>
+              <option value="$2,500+">$2,500+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+            <textarea name="description" placeholder="Describe what you want built or integrated. The more detail, the better!" required></textarea>
+            <button type="submit">Submit Custom Build Request</button>
+          </form>
+        </div>
+
+      </div>
     </div>
   </section>
 
